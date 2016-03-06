@@ -73,9 +73,21 @@ class LindChocolateChili(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "LindChocolateChili", amount=float(amount),kcalPerCG=538,GperOne=20)   
 
-       
+class FlaxSeed(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "FlaxSeed", amount=float(amount),kcalPerCG=471,GperOne=20)
+        
+class QuarkLow(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "QuarkLow", amount=float(amount),kcalPerCG=66,GperOne=500)
+        
+class CherryJuice(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "CherryJuice", amount=float(amount),kcalPerCG=59,GperOne=200)
+        
 IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":WildRice,
                   "PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,
                   "Almonds":Almonds,"RedLenses":RedLenses,"Peas":Peas,
                   "PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,
-                  "Banana":Banana,"LindChocolateChili":LindChocolateChili}
+                  "Banana":Banana,"LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,
+                  "QuarkLow":QuarkLow,"CherryJuice":CherryJuice}
