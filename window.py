@@ -15,6 +15,7 @@ class App:
         self.name.delete(0, tk.END)
         self.scaleFrame = tk.Frame(master)
         self.scaleFrame2 = tk.Frame(master)
+           
         self.scaleFrame.grid(row=0,column=2)
         self.scaleFrame2.grid(row=0,column=3)
         self.getKcal = tk.Button(
@@ -55,6 +56,7 @@ class App:
         if kcal >0:
             addMeal(getCurrentDay(),self.name.get(),kcal)
             self.name.delete(0, tk.END)
+            
 root = tk.Tk()
 
 app = App(root)
