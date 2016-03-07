@@ -43,7 +43,6 @@ class App:
     def getKcalToday(self):
         day = getCurrentDay()
         print(sum([x.kcal for x in day.meals]))
-              
             
     def apply(self):
         kcal = 0
