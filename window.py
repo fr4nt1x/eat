@@ -2,6 +2,27 @@ import tkinter as tk
 from ingredients import *
 from main import *
 
+class Example(tk.Frame):
+    def __init__(self, root):
+
+        tk.Frame.__init__(self, root)
+        self.canvas = tk.Canvas(root, borderwidth=0, background="#ffffff")
+        self.frame = tk.Frame(self.canvas, background="#ffffff")
+        self.vsb = tk.Scrollbar(root, orient="vertical", command=self.canvas.yview)
+        self.canvas.configure(yscrollcommand=self.vsb.set)
+
+        self.vsb.grid(row=4,column=1, sticky='ns')
+        self.canvas.grid(row=4,column=2)
+        self.canvas.create_window((4,4), window=self.frame, anchor="nw", 
+                                  tags="self.frame")
+
+        self.frame.bind("<Configure>", self.onFrameConfigure)
+
+    def onFrameConfigure(self, event):
+        '''Reset the scroll region to encompass the inner frame'''
+        self.canvas.configure(scrollregion=self.canvas.bbox("all"))
+
+        
 class App:
 
     def __init__(self, master):
@@ -13,11 +34,16 @@ class App:
         
         self.name.grid(row=0,column=1)
         self.name.delete(0, tk.END)
+        
         self.scaleFrame = tk.Frame(master)
-        self.scaleFrame2 = tk.Frame(master)
-           
+        
+        ex =  Example(master)
+        ex.grid(row=3,column=2)
+        self.scaleFrame2 = ex.frame#tk.Frame(master)
+        
+
         self.scaleFrame.grid(row=0,column=2)
-        self.scaleFrame2.grid(row=0,column=3)
+        #self.scaleFrame2.grid(row=0,column=3)
         self.getKcal = tk.Button(
             master, text="GetKcalToday", command=self.getKcalToday
             )
@@ -33,7 +59,7 @@ class App:
             w= tk.Scale(self.scaleFrame ,label=key, from_=0, to=5,resolution=0.1,length="100mm",orient=tk.HORIZONTAL,showvalue=1)
             i=i+1
             f= self.scaleFrame
-            if i > 10:
+            if i > len(IngredientList)/2:
                 f= self.scaleFrame2
             w= tk.Scale(f ,label=key, from_=0, to=5,resolution=0.1,length="100mm",orient=tk.HORIZONTAL,showvalue=1)
             self.scales.append((key,w))    
