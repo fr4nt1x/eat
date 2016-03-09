@@ -1,4 +1,6 @@
 from models import Base
+from models_ing import Baseincr
+
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 import os.path
@@ -8,13 +10,17 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///db\eatit.db'
 # Create an engine that stores data in the local directory's
 # sqlalchemy_example.db file.
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
+engine2 = create_engine('sqlite:///db\ing.db')
  
+
  
 # Bind the engine to the metadata of the Base class so that the
 # declaratives can be accessed through a DBSession instance
 Base.metadata.bind = engine
- 
+Baseincr.metadata.bind = engine2
+
 DBSession = sessionmaker(bind=engine)
+DBSession2 = sessionmaker(bind=engine2)
 # A DBSession() instance establishes all conversations with the database
 # and represents a "staging zone" for all the objects loaded into the
 # database session object. Any change made against the objects in the
@@ -23,4 +29,4 @@ DBSession = sessionmaker(bind=engine)
 # revert all of them back to the last commit by calling
 # session.rollback()
 session = DBSession()
-
+sessionIng = DBSession2()

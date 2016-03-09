@@ -16,6 +16,9 @@ class RockstarLime(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"RockstarLime",amount=float(amount),kcalPerCG=59, GperOne = 500)
 
+class RockstarRed(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self,"RockstarRed",amount=float(amount),kcalPerCG=64, GperOne = 500)
 class WildRice(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "WildRice", amount=float(amount),kcalPerCG=344,GperOne = 100)
@@ -55,7 +58,7 @@ class Peas(Ingredient):
 
 class PapricaRed(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "PapricaRed", amount=float(amount),kcalPerCG=35,GperOne=140)
+        Ingredient.__init__(self, "PapricaRed", amount=float(amount),kcalPerCG=35,GperOne=200)
 
 class Onion(Ingredient):
     def __init__(self,amount):
@@ -84,10 +87,68 @@ class QuarkLow(Ingredient):
 class CherryJuice(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "CherryJuice", amount=float(amount),kcalPerCG=59,GperOne=200)
+
+  
+class MilkRice(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "MilkRice", amount=float(amount),kcalPerCG=357,GperOne=100)
+        
+class Milk(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Milk", amount=float(amount),kcalPerCG=47,GperOne=200)
+        
+class Raisins(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Raisins", amount=float(amount),kcalPerCG=299 ,GperOne=50)
+        
+class Butter(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Butter", amount=float(amount),kcalPerCG=745,GperOne=20)
+        
+class Plums(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Plums", amount=float(amount),kcalPerCG=80,GperOne=500)
+        
+class Sugar(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Sugar", amount=float(amount),kcalPerCG=405,GperOne=20)
+        
+class Egg(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Egg", amount=float(amount),kcalPerCG=137,GperOne=50)
+        
+class Pretzel(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Pretzel", amount=float(amount),kcalPerCG=217,GperOne=60)
+
+class PretzelRing(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "PretzelRing", amount=float(amount),kcalPerCG=350,GperOne=100)
+
+class Turkey(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Turkey", amount=float(amount),kcalPerCG=97,GperOne=100)
+        
+class Porree(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Porree", amount=float(amount),kcalPerCG=26,GperOne=50)
+
+class ChinaNoodles(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "ChinaNoodles", amount=float(amount),kcalPerCG=359,GperOne=70)
+
+class Beer(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Beer", amount=float(amount),kcalPerCG=49,GperOne=500)
         
 IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":WheatBread,
                   "PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,
                   "Almonds":Almonds,"RedLenses":RedLenses,"Peas":Peas,
                   "PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,
                   "Banana":Banana,"LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,
-                  "QuarkLow":QuarkLow,"CherryJuice":CherryJuice}
+                  "QuarkLow":QuarkLow,"CherryJuice":CherryJuice,"MilkRice":MilkRice,
+                  "Milk":Milk,"Raisins":Raisins,"Butter":Butter,
+                  "Plums":Plums,"Sugar":Sugar,"Egg":Egg,
+                  "Pretzel":Pretzel,"PretzelRing":PretzelRing,"Turkey":Turkey,
+                  "Porree":Porree,"ChinaNoodles":ChinaNoodles,"RockstarRed":RockstarRed,
+                  "Beer":Beer}
