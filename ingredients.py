@@ -16,6 +16,10 @@ class RockstarLime(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"RockstarLime",amount=float(amount),kcalPerCG=59, GperOne = 500)
 
+class RockstarGuava(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self,"RockstarGuava",amount=float(amount),kcalPerCG=67, GperOne = 500)
+        
 class RockstarRed(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"RockstarRed",amount=float(amount),kcalPerCG=64, GperOne = 500)
@@ -141,6 +145,22 @@ class Beer(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Beer", amount=float(amount),kcalPerCG=49,GperOne=500)
         
+class Quinoa(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Quinoa", amount=float(amount),kcalPerCG=365 ,GperOne=80)
+        
+class Prinzenrolle(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Prinzenrolle", amount=float(amount),kcalPerCG=492 ,GperOne=24)
+
+class Pasta(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Pasta", amount=float(amount),kcalPerCG=359 ,GperOne=100)
+
+class Gulasch(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Gulasch", amount=float(amount),kcalPerCG=150 ,GperOne=100)
+        
 IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":WheatBread,
                   "PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,
                   "Almonds":Almonds,"RedLenses":RedLenses,"Peas":Peas,
@@ -151,4 +171,5 @@ IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":W
                   "Plums":Plums,"Sugar":Sugar,"Egg":Egg,
                   "Pretzel":Pretzel,"PretzelRing":PretzelRing,"Turkey":Turkey,
                   "Porree":Porree,"ChinaNoodles":ChinaNoodles,"RockstarRed":RockstarRed,
-                  "Beer":Beer}
+                  "Beer":Beer,"Quinoa":Quinoa,"RockstarGuava":RockstarGuava,"Prinzenrolle":Prinzenrolle,
+                  "Gulasch":Gulasch,"Pasta":Pasta}
