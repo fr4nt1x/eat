@@ -1,13 +1,13 @@
 import tkinter as tk
 from ingredients import *
 from main import *
-
+import math
 class Scroll(tk.Frame):
     def __init__(self, root,scrollrow,scrollcolumn):
 
         tk.Frame.__init__(self, root)
-        self.canvas = tk.Canvas(root, borderwidth=0, background="#ffffff")
-        self.frame = tk.Frame(self.canvas, background="#ffffff")
+        self.canvas = tk.Canvas(root, borderwidth=0, height=800,background="#ffffff")
+        self.frame = tk.Frame(self.canvas,background="#ffffff")
         self.vsb = tk.Scrollbar(root, orient="vertical", command=self.canvas.yview)
         self.canvas.configure(yscrollcommand=self.vsb.set)
 
@@ -37,9 +37,10 @@ class App:
         self.name.delete(0, tk.END)
         
         #plus 2 because scrollbar and canvas 
+        self.scaleFrames = []
         
-        self.scaleFrame2 = Scroll(master,1,3).frame
-        self.scaleFrame1 = Scroll(master,1,1).frame
+        for i in range(0,4):
+            self.scaleFrames.append(Scroll(master,1,2*i+1).frame)  
         
         self.getKcalButton = tk.Button(
             master, text="Get Kcal", command=self.getKcal
@@ -69,14 +70,19 @@ class App:
         self.apply.grid(row=3,column=4)
         
         i=0
+        bound = math.ceil(len(IngredientList)/len(self.scaleFrames))
+        print(len(IngredientList))
+        j = 0
         for key in sorted(IngredientList):
-            f = self.scaleFrame1
-            i+=1
-            if i>= len(IngredientList)/2:
-                f= self.scaleFrame2
+            if i>= bound and j < len(self.scaleFrames)-1:
+                i = 0
+                j +=1
+            print(j)
+            f= self.scaleFrames[j]
             w= tk.Scale(f ,label=key+" "+str(IngredientList[key](1).GperOne), from_=0, to=5,resolution=0.1,length="100mm",orient=tk.HORIZONTAL,showvalue=1)
             self.scales.append((key,w))
-            
+            i+=1
+
         for k,v in self.scales:
             v.pack()
             

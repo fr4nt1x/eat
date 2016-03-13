@@ -133,6 +133,10 @@ class Turkey(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Turkey", amount=float(amount),kcalPerCG=97,GperOne=100)
         
+class ChickenBreast(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "ChickenBreast", amount=float(amount),kcalPerCG=120,GperOne=100)
+        
 class Porree(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Porree", amount=float(amount),kcalPerCG=26,GperOne=50)
@@ -160,6 +164,46 @@ class Pasta(Ingredient):
 class Gulasch(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Gulasch", amount=float(amount),kcalPerCG=150 ,GperOne=100)
+
+class Cola(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Cola", amount=float(amount),kcalPerCG=43 ,GperOne=500)
+
+class Croissant(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Croissant", amount=float(amount),kcalPerCG=448 ,GperOne=65)
+
+class Potatoes(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Potatoes", amount=float(amount),kcalPerCG=77 ,GperOne=100)
+        
+class RoastPork(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "RoastPork", amount=float(amount),kcalPerCG=115 ,GperOne=100)
+class Lemonade(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Lemonade", amount=float(amount),kcalPerCG=39 ,GperOne=500)
+        
+class Lemonade(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Lemonade", amount=float(amount),kcalPerCG=39 ,GperOne=500)
+        
+class Landjager(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Landjager", amount=float(amount),kcalPerCG=472 ,GperOne=50)
+class ColdMeat(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "ColdMeat", amount=float(amount),kcalPerCG=270 ,GperOne=20)
+        
+class ChocoCrossaint(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "ChocoCrossaint", amount=float(amount),kcalPerCG=500 ,GperOne=65)
+class FruitSalad(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "FruitSalad", amount=float(amount),kcalPerCG=60 ,GperOne=100)
+class Bun(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Bun", amount=float(amount),kcalPerCG=248 ,GperOne=65)
         
 IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":WheatBread,
                   "PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,
@@ -172,4 +216,7 @@ IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":W
                   "Pretzel":Pretzel,"PretzelRing":PretzelRing,"Turkey":Turkey,
                   "Porree":Porree,"ChinaNoodles":ChinaNoodles,"RockstarRed":RockstarRed,
                   "Beer":Beer,"Quinoa":Quinoa,"RockstarGuava":RockstarGuava,"Prinzenrolle":Prinzenrolle,
-                  "Gulasch":Gulasch,"Pasta":Pasta}
+                  "Gulasch":Gulasch,"Pasta":Pasta,"Cola":Cola,"Croissant":Croissant,
+                  "RoastPork":RoastPork,"Potatoes":Potatoes,"Lemonade":Lemonade,
+                  "Landjager":Landjager,"ColdMeat":ColdMeat,"ChocoCrossaint":ChocoCrossaint,
+                  "FruitSalad":FruitSalad,"Bun":Bun,"ChickenBreast":ChickenBreast}
