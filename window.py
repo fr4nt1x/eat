@@ -3,22 +3,22 @@ from ingredients import *
 from main import *
 import math
 class Scroll(tk.Frame):
-    def __init__(self, root,scrollrow,scrollcolumn,title=""):
+    def __init__(self, root,scrollrow,scrollcolumn,title="",font=("Helvetica", 12)):
 
         tk.Frame.__init__(self, root)
-        self.Title = tk.Label(root, text=title)
+        self.Title = tk.Label(root, text=title,font=font)
 
         self.canvas = tk.Canvas(root, borderwidth=0, height=400,background="#ffffff")
         self.frame = tk.Frame(self.canvas,background="#ffffff")
         self.vsb = tk.Scrollbar(root, orient="vertical", command=self.canvas.yview)
         self.canvas.configure(yscrollcommand=self.vsb.set)
 
-        self.vsb.grid(row=scrollrow+1,column=scrollcolumn, sticky='ns')
+        self.vsb.grid(row=scrollrow+1,column=scrollcolumn, sticky='nsw')
         self.canvas.grid(row=scrollrow+1,column=scrollcolumn+1)
         self.canvas.create_window((0,0), window=self.frame, anchor="nw", 
                                   tags="self.frame")
         
-        self.Title.grid(row=scrollrow,column=scrollcolumn)
+        self.Title.grid(row=scrollrow,column=scrollcolumn,columnspan=2,sticky="w")
         self.frame.bind("<Configure>", self.onFrameConfigure)
 
     def onFrameConfigure(self, event):
@@ -29,73 +29,88 @@ class Scroll(tk.Frame):
 class App:
 
     def __init__(self, master):
-
-        self.nameL1 = tk.Label(master, text="MealName")
+        self.FontSize = 14
+        self.nameL1 = tk.Label(master, text="Meal Name:",font=("Helvetica", self.FontSize))
         self.day = getCurrentDay()
         
-        self.nameL1.grid(row=3,column=1)
+
         self.name = tk.Entry(master)
         
-        self.name.grid(row=3,column=2)
+
         self.name.delete(0, tk.END)
         
         #plus 2 because scrollbar and canvas 
         self.scaleFrames = []
+        self.maxRows = 2
+        self.maxColumns = 8
         for i in range(0,len(IngredientList)):
             
             column = i%4
+
             row=math.floor(i/4.)
-            
-            self.scaleFrames.append(Scroll(master,2*row+1,2*column+1,[x for x in sorted(IngredientList)][i]).frame)  
+            self.maxRows = 2*(row+1)
+            self.scaleFrames.append(Scroll(master,2*row+1,2*column,[x for x in sorted(IngredientList)][i]).frame)  
         
         self.getKcalButton = tk.Button(
-            master, text="Get Kcal", command=self.getKcal
+            master, text="Get Kcal", command=self.getKcal,font=("Helvetica", self.FontSize)
             )
         
         self.currentDayVariable = tk.StringVar()
         self.currentDayVariable.set("Active Day: "+str(self.day.dateofconsum))
-        self.currentDayL = tk.Label(master,textvariable=self.currentDayVariable)
-        self.currentDayL.grid(row=1,column=0)
-        
-        self.getKcalButton.grid(row=2,column=0)
+        self.currentDayL = tk.Label(master,textvariable=self.currentDayVariable,font=("Helvetica", self.FontSize))
+
         self.kcalAll = tk.StringVar()
         self.getKcal()
-        self.kcalShow = tk.Label(master, textvariable=self.kcalAll)
-        self.kcalShow.grid(row=4,column=0)
+        self.kcalShow = tk.Label(master, textvariable=self.kcalAll,font=("Helvetica", self.FontSize))
+
         self.scales = []
         
         self.changeDay = tk.Button(
-            master, text="Change Day", command=self.changeDay
+            master, text="Change Day", command=self.changeDay,font=("Helvetica", self.FontSize)
             )
-        
-        self.changeDay.grid(row=4,column=4)
+        self.Quit = tk.Button(
+            master, text="Quit", command=master.quit,font=("Helvetica", self.FontSize+5),fg="red"
+            )
+
         
         self.apply = tk.Button(
-            master, text="Apply", command=self.apply
+            master, text="Apply", command=self.apply,font=("Helvetica", self.FontSize)
             )
-        self.apply.grid(row=3,column=4)
         
+        self.callGrid()
         i=0
         for key in sorted(IngredientList):
             for k in sorted(IngredientList[key]):
                 f= self.scaleFrames[i]
                 w= tk.Scale(f ,label=k+" "+str(IngredientList[key][k](1).GperOne), from_=0, to=5,resolution=0.1,length="100mm",orient=tk.HORIZONTAL,showvalue=1)
-                self.scales.append((k,w))
+                self.scales.append((key,k,w))
+
             i+=1
 
-        for k,v in self.scales:
+        for _,_,v in self.scales:
             v.pack()
             
     def getKcal(self):
         self.kcalAll.set("Kcal: "+str(sum([x.kcal for x in self.day.meals])))
-            
+        
+    def callGrid(self):
+        self.currentDayL.grid(row=self.maxRows+1,column=0,columnspan=2,sticky="w")
+        self.kcalShow.grid(row=self.maxRows+1,column=2,columnspan=2,sticky="w")
+        self.nameL1.grid(row=self.maxRows+1,column=4,columnspan= 2,sticky="w")
+        self.name.grid(row=self.maxRows+1,column=4,columnspan= 2,sticky="e")
+
+        self.apply.grid(row=self.maxRows+2,column=4,columnspan= 2,sticky="e")
+        self.changeDay.grid(row=self.maxRows+2,column=0,columnspan=2,sticky="w")
+        self.getKcalButton.grid(row=self.maxRows+2,column=2,columnspan= 2,sticky="w")
+        self.Quit.grid(row=self.maxRows+2,column=6,columnspan= 2,sticky="e")
+        
     def apply(self):
         kcal = 0
-        for k,v in self.scales:
+        for key,k,v in self.scales:
             scalevalue = v.get()
             v.set(0)
             if scalevalue > 0.0:
-                ing = IngredientList[k](scalevalue)
+                ing = IngredientList[key][k](scalevalue)
                 kcal += ing.getKcal()
         if kcal >0:
             addMeal(self.day,self.name.get(),kcal)
@@ -132,8 +147,8 @@ class App:
          
 root = tk.Tk()
 root.title("Eatit")
+#root.attributes("-fullscreen", True)
 app = App(root)
-
 
 root.mainloop()
 root.destroy() # optional; see description below
