@@ -3,19 +3,22 @@ from ingredients import *
 from main import *
 import math
 class Scroll(tk.Frame):
-    def __init__(self, root,scrollrow,scrollcolumn):
+    def __init__(self, root,scrollrow,scrollcolumn,title=""):
 
         tk.Frame.__init__(self, root)
-        self.canvas = tk.Canvas(root, borderwidth=0, height=800,background="#ffffff")
+        self.Title = tk.Label(root, text=title)
+
+        self.canvas = tk.Canvas(root, borderwidth=0, height=400,background="#ffffff")
         self.frame = tk.Frame(self.canvas,background="#ffffff")
         self.vsb = tk.Scrollbar(root, orient="vertical", command=self.canvas.yview)
         self.canvas.configure(yscrollcommand=self.vsb.set)
 
-        self.vsb.grid(row=scrollrow,column=scrollcolumn, sticky='ns')
-        self.canvas.grid(row=scrollrow,column=scrollcolumn+1)
+        self.vsb.grid(row=scrollrow+1,column=scrollcolumn, sticky='ns')
+        self.canvas.grid(row=scrollrow+1,column=scrollcolumn+1)
         self.canvas.create_window((0,0), window=self.frame, anchor="nw", 
                                   tags="self.frame")
-
+        
+        self.Title.grid(row=scrollrow,column=scrollcolumn)
         self.frame.bind("<Configure>", self.onFrameConfigure)
 
     def onFrameConfigure(self, event):
@@ -38,9 +41,12 @@ class App:
         
         #plus 2 because scrollbar and canvas 
         self.scaleFrames = []
-        
-        for i in range(0,4):
-            self.scaleFrames.append(Scroll(master,1,2*i+1).frame)  
+        for i in range(0,len(IngredientList)):
+            
+            column = i%4
+            row=math.floor(i/4.)
+            
+            self.scaleFrames.append(Scroll(master,2*row+1,2*column+1,[x for x in sorted(IngredientList)][i]).frame)  
         
         self.getKcalButton = tk.Button(
             master, text="Get Kcal", command=self.getKcal
@@ -70,17 +76,11 @@ class App:
         self.apply.grid(row=3,column=4)
         
         i=0
-        bound = math.ceil(len(IngredientList)/len(self.scaleFrames))
-        print(len(IngredientList))
-        j = 0
         for key in sorted(IngredientList):
-            if i>= bound and j < len(self.scaleFrames)-1:
-                i = 0
-                j +=1
-            print(j)
-            f= self.scaleFrames[j]
-            w= tk.Scale(f ,label=key+" "+str(IngredientList[key](1).GperOne), from_=0, to=5,resolution=0.1,length="100mm",orient=tk.HORIZONTAL,showvalue=1)
-            self.scales.append((key,w))
+            for k in sorted(IngredientList[key]):
+                f= self.scaleFrames[i]
+                w= tk.Scale(f ,label=k+" "+str(IngredientList[key][k](1).GperOne), from_=0, to=5,resolution=0.1,length="100mm",orient=tk.HORIZONTAL,showvalue=1)
+                self.scales.append((k,w))
             i+=1
 
         for k,v in self.scales:
