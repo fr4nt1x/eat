@@ -211,6 +211,29 @@ class BratWurst(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "BratWurst", amount=float(amount),kcalPerCG=239 ,GperOne=50)
         
+class Wirsing(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Wirsing", amount=float(amount),kcalPerCG=140 ,GperOne=100)
+        
+class Fish(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Fish", amount=float(amount),kcalPerCG=140 ,GperOne=100)
+class NussEcke(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "NussEcke", amount=float(amount),kcalPerCG=540 ,GperOne=50)
+        
+class GermKnoedel(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "GermKnoedel & VanilleSauce", amount=float(amount),kcalPerCG=300 ,GperOne=180)
+class Romanesco(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Romanesco", amount=float(amount),kcalPerCG=300 ,GperOne=180)
+class Cauliflower(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Cauliflower", amount=float(amount),kcalPerCG=23 ,GperOne=100)
+class Apple(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Apple", amount=float(amount),kcalPerCG=54 ,GperOne=200)
 IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":WheatBread,
                   "PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,
                   "Almonds":Almonds,"RedLenses":RedLenses,"Peas":Peas,
@@ -231,9 +254,9 @@ IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":W
 IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuice,"Milk":Milk,"RockstarRed":RockstarRed,"RockstarGuava":RockstarGuava,"Beer":Beer,"Lemonade":Lemonade,"Cola":Cola},
                   "StapleFood":{"WildRice":WildRice,"WheatBread":WheatBread,"RedLenses":RedLenses,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
-                  "Meat":{"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst},
-                  "Vegetables/Fruit":{"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
-                  "Rest" :{"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
+                  "Meat":{"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
+                  "Vegetables/Fruit":{"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
+                  "Rest" :{"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,
                             "Sugar":Sugar,"Egg":Egg,"Prinzenrolle":Prinzenrolle,"Croissant":Croissant,"ChocoCrossaint":ChocoCrossaint}
                   }                    
