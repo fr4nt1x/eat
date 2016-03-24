@@ -41,7 +41,11 @@ class PhiladelphiaClassic(Ingredient):
     #one is a enoguh on a slice of bread
     def __init__(self,amount):
         Ingredient.__init__(self, "PhiladelphiaClassic", amount=float(amount),kcalPerCG=235,GperOne = 20)
-
+        
+class CreamJoghurt(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "CreamJoghurt", amount=float(amount),kcalPerCG=140,GperOne = 150)
+        
 class FolEpiFine(Ingredient):
     #one is a enoguh on a slice of bread
     def __init__(self,amount):
@@ -234,6 +238,11 @@ class Cauliflower(Ingredient):
 class Apple(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Apple", amount=float(amount),kcalPerCG=54 ,GperOne=200)
+        
+class NutCake(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "NutCake", amount=float(amount),kcalPerCG=500 ,GperOne=70)
+        
 IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":WheatBread,
                   "PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,
                   "Almonds":Almonds,"RedLenses":RedLenses,"Peas":Peas,
@@ -256,7 +265,7 @@ IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuic
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
                   "Meat":{"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
                   "Vegetables/Fruit":{"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
-                  "Rest" :{"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
+                  "Rest" :{"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,
                             "Sugar":Sugar,"Egg":Egg,"Prinzenrolle":Prinzenrolle,"Croissant":Croissant,"ChocoCrossaint":ChocoCrossaint}
                   }                    
