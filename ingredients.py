@@ -243,27 +243,15 @@ class NutCake(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "NutCake", amount=float(amount),kcalPerCG=500 ,GperOne=70)
         
-IngredientList = {"RockstarLime":RockstarLime,"WildRice":WildRice,"WheatBread":WheatBread,
-                  "PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,
-                  "Almonds":Almonds,"RedLenses":RedLenses,"Peas":Peas,
-                  "PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,
-                  "Banana":Banana,"LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,
-                  "QuarkLow":QuarkLow,"CherryJuice":CherryJuice,"MilkRice":MilkRice,
-                  "Milk":Milk,"Raisins":Raisins,"Butter":Butter,
-                  "Plums":Plums,"Sugar":Sugar,"Egg":Egg,
-                  "Pretzel":Pretzel,"PretzelRing":PretzelRing,"Turkey":Turkey,
-                  "Porree":Porree,"ChinaNoodles":ChinaNoodles,"RockstarRed":RockstarRed,
-                  "Beer":Beer,"Quinoa":Quinoa,"RockstarGuava":RockstarGuava,"Prinzenrolle":Prinzenrolle,
-                  "Gulasch":Gulasch,"Pasta":Pasta,"Cola":Cola,"Croissant":Croissant,
-                  "RoastPork":RoastPork,"Potatoes":Potatoes,"Lemonade":Lemonade,
-                  "Landjager":Landjager,"ColdMeat":ColdMeat,"ChocoCrossaint":ChocoCrossaint,
-                  "FruitSalad":FruitSalad,"Bun":Bun,"ChickenBreast":ChickenBreast,
-                  "SauerKraut":SauerKraut,"BratWurst":BratWurst}
+class Leberknodel(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Leberknodel", amount=float(amount),kcalPerCG=170 ,GperOne=150)
+        
 
 IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuice,"Milk":Milk,"RockstarRed":RockstarRed,"RockstarGuava":RockstarGuava,"Beer":Beer,"Lemonade":Lemonade,"Cola":Cola},
                   "StapleFood":{"WildRice":WildRice,"WheatBread":WheatBread,"RedLenses":RedLenses,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
-                  "Meat":{"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
+                  "Meat":{"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
                   "Vegetables/Fruit":{"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
                   "Rest" :{"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,

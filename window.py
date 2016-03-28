@@ -2,6 +2,8 @@ import tkinter as tk
 from ingredients import *
 from main import *
 import math
+
+
 class Scroll(tk.Frame):
     def __init__(self, root,scrollrow,scrollcolumn,title="",font=("Helvetica", 12)):
 
@@ -31,6 +33,7 @@ class App:
     def __init__(self, master):
         self.FontSize = 14
         self.nameL1 = tk.Label(master, text="Meal Name:",font=("Helvetica", self.FontSize))
+        self.currentWeight = tk.Label(master, text="Meal Name:",font=("Helvetica", self.FontSize))
         self.day = getCurrentDay()
         
 
@@ -51,22 +54,30 @@ class App:
             self.maxRows = 2*(row+1)
             self.scaleFrames.append(Scroll(master,2*row+1,2*column,[x for x in sorted(IngredientList)][i]).frame)  
         
-        self.getKcalButton = tk.Button(
-            master, text="Get Kcal", command=self.getKcal,font=("Helvetica", self.FontSize)
+        self.updateDayDataBtn = tk.Button(
+            master, text="Get Kcal & Weight", command=self.updateData,font=("Helvetica", self.FontSize)
             )
         
         self.currentDayVariable = tk.StringVar()
         self.currentDayVariable.set("Active Day: "+str(self.day.dateofconsum))
         self.currentDayL = tk.Label(master,textvariable=self.currentDayVariable,font=("Helvetica", self.FontSize))
 
+        self.weight = tk.StringVar()
+        self.weightShow = tk.Label(master, textvariable=self.weight,font=("Helvetica", self.FontSize))
+
         self.kcalAll = tk.StringVar()
-        self.getKcal()
         self.kcalShow = tk.Label(master, textvariable=self.kcalAll,font=("Helvetica", self.FontSize))
+
+        self.updateData()
+
 
         self.scales = []
         
         self.changeDay = tk.Button(
             master, text="Change Day", command=self.changeDay,font=("Helvetica", self.FontSize)
+            )
+        self.changeWeightBtn = tk.Button(
+            master, text="Change Weight", command=self.changeWeight,font=("Helvetica", self.FontSize)
             )
         self.Quit = tk.Button(
             master, text="Quit", command=master.quit,font=("Helvetica", self.FontSize+5),fg="red"
@@ -90,19 +101,30 @@ class App:
         for _,_,v in self.scales:
             v.pack()
             
+    def updateData(self):
+        self.getKcal()
+        self.getWeight()
+        
     def getKcal(self):
         self.kcalAll.set("Kcal: "+str(sum([x.kcal for x in self.day.meals])))
+        
+    def getWeight(self):
+        self.weight.set("Weight: "+str(self.day.weight))
         
     def callGrid(self):
         self.currentDayL.grid(row=self.maxRows+1,column=0,columnspan=2,sticky="w")
         self.kcalShow.grid(row=self.maxRows+1,column=2,columnspan=2,sticky="w")
-        self.nameL1.grid(row=self.maxRows+1,column=4,columnspan= 2,sticky="w")
-        self.name.grid(row=self.maxRows+1,column=4,columnspan= 2,sticky="e")
+        self.weightShow.grid(row=self.maxRows+1,column=2,columnspan=2,sticky="e")
+        self.nameL1.grid(row=self.maxRows+1,column=6,columnspan= 2,sticky="w")
+        self.name.grid(row=self.maxRows+1,column=6,columnspan= 2,sticky="e")
 
+        
         self.apply.grid(row=self.maxRows+2,column=4,columnspan= 2,sticky="e")
         self.changeDay.grid(row=self.maxRows+2,column=0,columnspan=2,sticky="w")
-        self.getKcalButton.grid(row=self.maxRows+2,column=2,columnspan= 2,sticky="w")
+        self.updateDayDataBtn.grid(row=self.maxRows+2,column=2,columnspan= 2,sticky="w")
+        self.changeWeightBtn.grid(row=self.maxRows+2,column=2,columnspan= 2,sticky="e")
         self.Quit.grid(row=self.maxRows+2,column=6,columnspan= 2,sticky="e")
+
         
     def apply(self):
         kcal = 0
@@ -116,7 +138,35 @@ class App:
             addMeal(self.day,self.name.get(),kcal)
             self.name.delete(0, tk.END)
             self.getKcal()
-            
+
+    def changeWeight(self):
+        top = tk.Toplevel()
+        top.title("Add Weight")
+        weight = tk.Entry(top)
+        weight.pack(anchor="e")
+        def SetWeight():
+            weightuser = weight.get()
+            try:
+                # Try to make it a float
+                weightuser = float(weightuser)
+                self.day.weight = weightuser
+                session.commit()
+                top.destroy()
+            except ValueError:
+                # Print this if the input cannot be made a float
+                print ("Bad input")
+                
+        msg = tk.Message(top, text="Enter Weight:")
+        msg.pack()
+        
+        button = tk.Button(top, text="Cancel", command=top.destroy)        
+        button.pack()
+        button = tk.Button(top, text="Apply", command=SetWeight)        
+        button.pack()
+        
+
+
+
     def changeDay(self):
         
         def SetDay():

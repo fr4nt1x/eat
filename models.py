@@ -10,7 +10,7 @@ class Day(Base):
     id = Column(Integer, primary_key=True)
     dateofconsum = Column(Date,index=True)
     meals = relationship("Meal", backref="day")
-
+    weight = Column(Float,index=True)
     
 class Meal(Base):
     __tablename__ = 'meal'
