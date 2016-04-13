@@ -72,6 +72,9 @@ class Peas(Ingredient):
 class PapricaRed(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "PapricaRed", amount=float(amount),kcalPerCG=35,GperOne=200)
+class Pickle(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Pickle", amount=float(amount),kcalPerCG=21,GperOne=180)
 class Tomato(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Tomato", amount=float(amount),kcalPerCG=18,GperOne=100)
@@ -272,7 +275,7 @@ IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuic
                   "StapleFood":{"WildRice":WildRice,"WheatBread":WheatBread,"RedLenses":RedLenses,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
                   "Meat":{"GroundMeat":GroundMeat,"BratHering":BratHering,"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
-                  "Vegetables/Fruit":{"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
+                  "Vegetables/Fruit":{"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
                   "Rest" :{"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,
                             "Sugar":Sugar,"Egg":Egg,"Prinzenrolle":Prinzenrolle,"Croissant":Croissant,"ChocoCrossaint":ChocoCrossaint}
