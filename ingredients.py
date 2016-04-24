@@ -264,7 +264,12 @@ class Apple(Ingredient):
 class NutCake(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "NutCake", amount=float(amount),kcalPerCG=500 ,GperOne=70)
+
+class Datschi(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Datschi", amount=float(amount),kcalPerCG=300 ,GperOne=80)
         
+
 class Leberknodel(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Leberknodel", amount=float(amount),kcalPerCG=170 ,GperOne=150)
@@ -283,7 +288,7 @@ IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuic
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
                   "Meat":{"Tuna":Tuna,"GroundMeat":GroundMeat,"BratHering":BratHering,"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
                   "Vegetables/Fruit":{"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
-                  "Rest" :{"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
+                  "Rest" :{"Datschi":Datschi,"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,
                             "Sugar":Sugar,"Egg":Egg,"Prinzenrolle":Prinzenrolle,"Croissant":Croissant,"ChocoCrossaint":ChocoCrossaint}
                   }                    
