@@ -21,7 +21,10 @@ class SemmelKnoedel(Ingredient):
 class OatMeal(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"OatMeal",amount=float(amount),kcalPerCG=361, GperOne = 100)
-           
+class Toast(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self,"Toast",amount=float(amount),kcalPerCG=255, GperOne = 37.5)
+            
 class Tuna(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"Tuna",amount=float(amount),kcalPerCG=97, GperOne = 150)
@@ -103,6 +106,9 @@ class Carot(Ingredient):
 class Banana(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Banana", amount=float(amount),kcalPerCG=90,GperOne=100)
+class Ananas(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Ananas", amount=float(amount),kcalPerCG=66,GperOne=140)
 
 class LindChocolateChili(Ingredient):
     def __init__(self,amount):
@@ -290,10 +296,10 @@ class Salad(Ingredient):
         
 
 IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuice,"Milk":Milk,"RockstarRed":RockstarRed,"RockstarGuava":RockstarGuava,"Beer":Beer,"Lemonade":Lemonade,"Cola":Cola},
-                  "StapleFood":{"OatMeal":OatMeal,"SemmelKnoedel":SemmelKnoedel,"WildRice":WildRice,"WheatBread":WheatBread,"RedLenses":RedLenses,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
+                  "StapleFood":{"Toast":Toast,"OatMeal":OatMeal,"SemmelKnoedel":SemmelKnoedel,"WildRice":WildRice,"WheatBread":WheatBread,"RedLenses":RedLenses,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
                   "Meat":{"Tuna":Tuna,"GroundMeat":GroundMeat,"BratHering":BratHering,"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
-                  "Vegetables/Fruit":{"Kiwi":Kiwi,"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
+                  "Vegetables/Fruit":{"Ananas":Ananas,"Kiwi":Kiwi,"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
                   "Rest" :{"Datschi":Datschi,"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,
                             "Sugar":Sugar,"Egg":Egg,"Prinzenrolle":Prinzenrolle,"Croissant":Croissant,"ChocoCrossaint":ChocoCrossaint}
