@@ -181,7 +181,7 @@ class App:
         listbox = tk.Listbox(top)
         listbox.pack()
         
-        days = [(x.dateofconsum,x) for x in session.query(Day).order_by(Day.dateofconsum.desc()).limit(10)]
+        days = [(x.dateofconsum,x) for x in session.query(Day).order_by(Day.dateofconsum.desc()).limit(12)]
         for key,value in days:
             listbox.insert(tk.END, key)
             

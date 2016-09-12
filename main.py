@@ -1,17 +1,23 @@
 from init import session
 from models import Meal, Day
-from ingredients import RockstarLime
-from datetime import date
+from sqlalchemy import desc
+from datetime import date,timedelta
 
 def getCurrentDay():
-    if getLastDay() is None:
-        session.add(Day(dateofconsum=date.today()))
-        session.commit()
+    lastDay = getLastDay()
+    oneDay = timedelta(days=1)
+    
+    while (lastDay.dateofconsum != date.today()):
+        lastDay=Day(dateofconsum=lastDay.dateofconsum+oneDay)
+        session.add(lastDay)
+        print(lastDay.dateofconsum)
+        
+    session.commit()
     return getLastDay()
 
 def getLastDay():
-    res = session.query(Day).filter_by(dateofconsum=date.today()).first()
-    return(res)
+    res = session.query(Day).order_by(desc(Day.dateofconsum)).first()
+    return res
 
  
 def addMeal(day,name,kcal):
