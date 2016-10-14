@@ -133,6 +133,7 @@ class App:
             v.set(0)
             if scalevalue > 0.0:
                 ing = IngredientList[key][k](scalevalue)
+                print(ing.name)
                 kcal += ing.getKcal()
         if kcal >0:
             addMeal(self.day,self.name.get(),kcal)

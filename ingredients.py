@@ -1,13 +1,16 @@
 
 
 class Ingredient():
-    def __init__(self,name,amount,kcalPerCG,GperOne):
+    def __init__(self,name,amount,kcalPerCG,GperOne,PricePerPackage=0.0,GperPackage=None):
         #amount describes standard unit, for rice and stuff its 100g, amount = 1 times kcalPerUnit gives the kcal in one standard unit
         self.name = name
         self.amount= amount
         self.kcalPerOne = kcalPerCG*(GperOne/100.0)
         self.GperOne = GperOne
-        
+        if GperPackage != None:       
+            self.PricePerOne = (GperOne*PricePerPackage) /GperPackage  
+            print(self.name)
+            print(self.PricePerOne)
     def getKcal(self):
         return self.kcalPerOne*self.amount
 
@@ -21,31 +24,31 @@ class StrawberryPie(Ingredient):
         Ingredient.__init__(self,"StrawberryPie",amount=float(amount),kcalPerCG=159, GperOne = 100)
 class RockstarLime(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self,"RockstarLime",amount=float(amount),kcalPerCG=59, GperOne = 500)
+        Ingredient.__init__(self,"RockstarLime",amount=float(amount),kcalPerCG=59, GperOne = 500,PricePerPackage=1.49,GperPackage=500)
 class SemmelKnoedel(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"SemmelKnoedel",amount=float(amount),kcalPerCG=181, GperOne = 100)
 class OatMeal(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self,"OatMeal",amount=float(amount),kcalPerCG=361, GperOne = 100)
+        Ingredient.__init__(self,"OatMeal",amount=float(amount),kcalPerCG=361, GperOne = 100,PricePerPackage=1.89,GperPackage=500)
 class Toast(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self,"Toast",amount=float(amount),kcalPerCG=255, GperOne = 37.5)
+        Ingredient.__init__(self,"Toast",amount=float(amount),kcalPerCG=255, GperOne = 37.5,PricePerPackage=1.19,GperPackage=500)
             
 class Tuna(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self,"Tuna",amount=float(amount),kcalPerCG=97, GperOne = 150)
+        Ingredient.__init__(self,"Tuna",amount=float(amount),kcalPerCG=97, GperOne = 150,PricePerPackage=1.49,GperPackage=150)
 class Kiwi(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"Kiwi",amount=float(amount),kcalPerCG=62, GperOne = 100)
 
 class RockstarGuava(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self,"RockstarGuava",amount=float(amount),kcalPerCG=67, GperOne = 500)
+        Ingredient.__init__(self,"RockstarGuava",amount=float(amount),kcalPerCG=67, GperOne = 500,PricePerPackage=1.49,GperPackage=500)
         
 class RockstarRed(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self,"RockstarRed",amount=float(amount),kcalPerCG=64, GperOne = 500)
+        Ingredient.__init__(self,"RockstarRed",amount=float(amount),kcalPerCG=64, GperOne = 500,PricePerPackage=1.49,GperPackage=500)
 class WildRice(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "WildRice", amount=float(amount),kcalPerCG=344,GperOne = 100)
