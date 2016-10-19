@@ -20,8 +20,8 @@ def getLastDay():
     return res
 
  
-def addMeal(day,name,kcal):
-    session.add(Meal(day= day, name=name, kcal = kcal ))
+def addMeal(day,name,kcal,price=None):
+    session.add(Meal(day= day, name=name, kcal = kcal,price=price))
     session.commit()
 
 

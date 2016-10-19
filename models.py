@@ -20,5 +20,6 @@ class Meal(Base):
     name = Column(String(250), nullable=False)
     kcal = Column(Integer,index= True)
     day_id = Column(Integer, ForeignKey('day.id'))
+    price = Column(Float,index=True)
 
 

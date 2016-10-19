@@ -8,11 +8,14 @@ class Ingredient():
         self.kcalPerOne = kcalPerCG*(GperOne/100.0)
         self.GperOne = GperOne
         if GperPackage != None:       
-            self.PricePerOne = (GperOne*PricePerPackage) /GperPackage  
-            print(self.name)
-            print(self.PricePerOne)
+            self.PricePerOne = (GperOne*PricePerPackage) /GperPackage
+        else:
+            self.PricePerOne=0.0
+            
     def getKcal(self):
         return self.kcalPerOne*self.amount
+    def getPrice(self):
+        return self.PricePerOne*self.amount
 
     
 class Cream(Ingredient):
@@ -22,12 +25,16 @@ class Cream(Ingredient):
 class StrawberryPie(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"StrawberryPie",amount=float(amount),kcalPerCG=159, GperOne = 100)
+
+        
 class RockstarLime(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"RockstarLime",amount=float(amount),kcalPerCG=59, GperOne = 500,PricePerPackage=1.49,GperPackage=500)
+        
 class SemmelKnoedel(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"SemmelKnoedel",amount=float(amount),kcalPerCG=181, GperOne = 100)
+        
 class OatMeal(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"OatMeal",amount=float(amount),kcalPerCG=361, GperOne = 100,PricePerPackage=1.89,GperPackage=500)
@@ -38,6 +45,7 @@ class Toast(Ingredient):
 class Tuna(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"Tuna",amount=float(amount),kcalPerCG=97, GperOne = 150,PricePerPackage=1.49,GperPackage=150)
+        
 class Kiwi(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"Kiwi",amount=float(amount),kcalPerCG=62, GperOne = 100)
@@ -49,6 +57,8 @@ class RockstarGuava(Ingredient):
 class RockstarRed(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"RockstarRed",amount=float(amount),kcalPerCG=64, GperOne = 500,PricePerPackage=1.49,GperPackage=500)
+
+        
 class WildRice(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "WildRice", amount=float(amount),kcalPerCG=344,GperOne = 100)
@@ -130,7 +140,7 @@ class FlaxSeed(Ingredient):
         
 class QuarkLow(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "QuarkLow", amount=float(amount),kcalPerCG=66,GperOne=500)
+        Ingredient.__init__(self, "QuarkLow", amount=float(amount),kcalPerCG=66,GperOne=500,PricePerPackage=0.55,GperPackage=500)
         
 class CherryJuice(Ingredient):
     def __init__(self,amount):
@@ -143,7 +153,7 @@ class MilkRice(Ingredient):
         
 class Milk(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Milk", amount=float(amount),kcalPerCG=47,GperOne=200)
+        Ingredient.__init__(self, "Milk", amount=float(amount),kcalPerCG=47,GperOne=200,PricePerPackage=0.89,GperPackage=500)
         
 class Raisins(Ingredient):
     def __init__(self,amount):
@@ -167,11 +177,11 @@ class Egg(Ingredient):
         
 class Pretzel(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Pretzel", amount=float(amount),kcalPerCG=217,GperOne=60)
+        Ingredient.__init__(self, "Pretzel", amount=float(amount),kcalPerCG=217,GperOne=60,PricePerPackage=0.50,GperPackage=60)
 
 class PretzelRing(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "PretzelRing", amount=float(amount),kcalPerCG=350,GperOne=100)
+        Ingredient.__init__(self, "PretzelRing", amount=float(amount),kcalPerCG=350,GperOne=100,PricePerPackage=1.20,GperPackage=100)
 
 class Turkey(Ingredient):
     def __init__(self,amount):
@@ -205,7 +215,7 @@ class Prinzenrolle(Ingredient):
 
 class Pasta(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Pasta", amount=float(amount),kcalPerCG=359 ,GperOne=100)
+        Ingredient.__init__(self, "Pasta", amount=float(amount),kcalPerCG=359 ,GperOne=100,PricePerPackage=1.59,GperPackage=500)
 
 class Gulasch(Ingredient):
     def __init__(self,amount):
