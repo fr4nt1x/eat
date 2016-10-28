@@ -95,7 +95,7 @@ class FolEpiFine(Ingredient):
 class Almonds(Ingredient):
     #one handfull
     def __init__(self,amount):
-        Ingredient.__init__(self, "Almonds", amount=float(amount),kcalPerCG=611,GperOne=20)
+        Ingredient.__init__(self, "Almonds", amount=float(amount),kcalPerCG=611,GperOne=20,PricePerPackage=2.49,GperPackage=200)
 
 class RedLenses(Ingredient):
     def __init__(self,amount):
@@ -107,13 +107,13 @@ class Peas(Ingredient):
 
 class PapricaRed(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "PapricaRed", amount=float(amount),kcalPerCG=35,GperOne=200)
+        Ingredient.__init__(self, "PapricaRed", amount=float(amount),kcalPerCG=35,GperOne=200,PricePerPackage=9.99,GperPackage=1000)
 class Pickle(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Pickle", amount=float(amount),kcalPerCG=21,GperOne=180)
 class Tomato(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Tomato", amount=float(amount),kcalPerCG=18,GperOne=100)
+        Ingredient.__init__(self, "Tomato", amount=float(amount),kcalPerCG=18,GperOne=100,PricePerPackage=4.99,GperPackage=1000)
 
 class Onion(Ingredient):
     def __init__(self,amount):
@@ -121,11 +121,11 @@ class Onion(Ingredient):
 
 class Carot(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Carot", amount=float(amount),kcalPerCG=26,GperOne=100)
+        Ingredient.__init__(self, "Carot", amount=float(amount),kcalPerCG=26,GperOne=100,PricePerPackage=2.5,GperPackage=1000)
 
 class Banana(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Banana", amount=float(amount),kcalPerCG=90,GperOne=100)
+        Ingredient.__init__(self, "Banana", amount=float(amount),kcalPerCG=90,GperOne=100,PricePerPackage=2.99,GperPackage=1000)
 class Ananas(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Ananas", amount=float(amount),kcalPerCG=66,GperOne=140)
@@ -173,7 +173,7 @@ class Sugar(Ingredient):
         
 class Egg(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Egg", amount=float(amount),kcalPerCG=137,GperOne=50)
+        Ingredient.__init__(self, "Egg", amount=float(amount),kcalPerCG=137,GperOne=50,PricePerPackage=2.59,GperPackage=500)
         
 class Pretzel(Ingredient):
     def __init__(self,amount):
@@ -195,7 +195,7 @@ class GroundMeat(Ingredient):
         Ingredient.__init__(self, "GroundMeat", amount=float(amount),kcalPerCG=225,GperOne=100)        
 class Porree(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Porree", amount=float(amount),kcalPerCG=26,GperOne=50)
+        Ingredient.__init__(self, "Porree", amount=float(amount),kcalPerCG=26,GperOne=50,PricePerPackage=2.5,GperPackage=1000)
 
 class ChinaNoodles(Ingredient):
     def __init__(self,amount):
