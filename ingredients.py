@@ -189,7 +189,7 @@ class Turkey(Ingredient):
         
 class ChickenBreast(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "ChickenBreast", amount=float(amount),kcalPerCG=120,GperOne=100)
+        Ingredient.__init__(self, "ChickenBreast", amount=float(amount),kcalPerCG=120,GperOne=100,PricePerPackage=11.49,GperPackage=1000)
 class GroundMeat(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "GroundMeat", amount=float(amount),kcalPerCG=225,GperOne=100)        
