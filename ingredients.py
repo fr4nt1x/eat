@@ -132,7 +132,7 @@ class Ananas(Ingredient):
 
 class LindChocolateChili(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "LindChocolateChili", amount=float(amount),kcalPerCG=538,GperOne=20)   
+        Ingredient.__init__(self, "LindChocolateChili", amount=float(amount),kcalPerCG=538,GperOne=20,PricePerPackage=1.99,GperPackage=100)   
 
 class FlaxSeed(Ingredient):
     def __init__(self,amount):
@@ -199,7 +199,7 @@ class Porree(Ingredient):
 
 class ChinaNoodles(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "ChinaNoodles", amount=float(amount),kcalPerCG=359,GperOne=70)
+        Ingredient.__init__(self, "ChinaNoodles", amount=float(amount),kcalPerCG=359,GperOne=70,PricePerPackage=1.99,GperPackage=250)
 
 class Beer(Ingredient):
     def __init__(self,amount):
