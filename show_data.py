@@ -39,10 +39,9 @@ def interpolate(weights):
             weights[i:j+i] = np.ones(j)*startweight + np.arange(1,j+1)*delta
     return weights
     
-def get_days():
-    allDays = session.query(Day).order_by(Day.dateofconsum).all()
-    weights = np.array([x.weight for x in allDays])
-    
+def get_days(startday):
+    allDays = np.array(session.query(Day).order_by(Day.dateofconsum).all())[startday:]
+    weights = np.array([x.weight for x in allDays])    
     kcal = np.array([sum([ m.kcal for m in x.meals]) for x in allDays])
     
    
@@ -61,9 +60,12 @@ def get_days():
    #print(np.trapz((y2-y3)*max(kcal),x))
     plt.show()
 
-    
-get_days()
+def get_price_per_day(startday):
+    allDays = np.array(session.query(Day).order_by(Day.dateofconsum).all())[startday:]
+    price = np.array([sum([z.price for z in x.meals if z.price!= None]) for x in allDays])    
+    print(sum(price)/allDays.size)
+#get_days(50)
 
-
+get_price_per_day(235)
             
 

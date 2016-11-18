@@ -65,7 +65,7 @@ class WildRice(Ingredient):
 
 class WheatBread(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "WheatBread", amount=float(amount),kcalPerCG=241,GperOne = 40)
+        Ingredient.__init__(self, "WheatBread", amount=float(amount),kcalPerCG=241,GperOne = 40,PricePerPackage=2.5,GperPackage=500)
 
 class PeanutButterCrunchy(Ingredient):
     #one is a enoguh on a slice of bread
@@ -81,7 +81,7 @@ class PhiladelphiaClassic(Ingredient):
 class Geramot(Ingredient):
     #one is a enoguh on a slice of bread
     def __init__(self,amount):
-        Ingredient.__init__(self, "Geramot", amount=float(amount),kcalPerCG=356,GperOne = 40)
+        Ingredient.__init__(self, "Geramot", amount=float(amount),kcalPerCG=356,GperOne = 40,PricePerPackage=2.99,GperPackage=300)
                 
 class CreamJoghurt(Ingredient):
     def __init__(self,amount):
@@ -90,16 +90,16 @@ class CreamJoghurt(Ingredient):
 class FolEpiFine(Ingredient):
     #one is a enoguh on a slice of bread
     def __init__(self,amount):
-        Ingredient.__init__(self, "FolEpiFine", amount=float(amount),kcalPerCG=361,GperOne = 25)
+        Ingredient.__init__(self, "FolEpiFine", amount=float(amount),kcalPerCG=361,GperOne = 25,PricePerPackage=1.99,GperPackage=150)
 
 class Almonds(Ingredient):
     #one handfull
     def __init__(self,amount):
         Ingredient.__init__(self, "Almonds", amount=float(amount),kcalPerCG=611,GperOne=20,PricePerPackage=2.49,GperPackage=200)
 
-class RedLenses(Ingredient):
+class RedLentils(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "RedLenses", amount=float(amount),kcalPerCG=352,GperOne=120)
+        Ingredient.__init__(self, "RedLentils", amount=float(amount),kcalPerCG=352,GperOne=120,PricePerPackage=1.99,GperPackage=500)
 
 class Peas(Ingredient):
     def __init__(self,amount):
@@ -108,9 +108,11 @@ class Peas(Ingredient):
 class PapricaRed(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "PapricaRed", amount=float(amount),kcalPerCG=35,GperOne=200,PricePerPackage=9.99,GperPackage=1000)
+        
 class Pickle(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Pickle", amount=float(amount),kcalPerCG=21,GperOne=180)
+        
 class Tomato(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Tomato", amount=float(amount),kcalPerCG=18,GperOne=100,PricePerPackage=4.99,GperPackage=1000)
@@ -126,6 +128,7 @@ class Carot(Ingredient):
 class Banana(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Banana", amount=float(amount),kcalPerCG=90,GperOne=100,PricePerPackage=2.99,GperPackage=1000)
+        
 class Ananas(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Ananas", amount=float(amount),kcalPerCG=66,GperOne=140)
@@ -149,7 +152,7 @@ class CherryJuice(Ingredient):
   
 class MilkRice(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "MilkRice", amount=float(amount),kcalPerCG=357,GperOne=100)
+        Ingredient.__init__(self, "MilkRice", amount=float(amount),kcalPerCG=357,GperOne=100,PricePerPackage=1.59,GperPackage=500)
         
 class Milk(Ingredient):
     def __init__(self,amount):
@@ -157,11 +160,11 @@ class Milk(Ingredient):
         
 class Raisins(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Raisins", amount=float(amount),kcalPerCG=299 ,GperOne=50)
+        Ingredient.__init__(self, "Raisins", amount=float(amount),kcalPerCG=299 ,GperOne=50,PricePerPackage=1.99,GperPackage=250)
         
 class Butter(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Butter", amount=float(amount),kcalPerCG=745,GperOne=20)
+        Ingredient.__init__(self, "Butter", amount=float(amount),kcalPerCG=745,GperOne=20,PricePerPackage=1.79,GperPackage=250)
         
 class Plums(Ingredient):
     def __init__(self,amount):
@@ -185,14 +188,16 @@ class PretzelRing(Ingredient):
 
 class Turkey(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Turkey", amount=float(amount),kcalPerCG=97,GperOne=100)
+        Ingredient.__init__(self, "Turkey", amount=float(amount),kcalPerCG=97,GperOne=100,PricePerPackage=12.50,GperPackage=1000)
         
 class ChickenBreast(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "ChickenBreast", amount=float(amount),kcalPerCG=120,GperOne=100,PricePerPackage=11.49,GperPackage=1000)
+        
 class GroundMeat(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "GroundMeat", amount=float(amount),kcalPerCG=225,GperOne=100)        
+        Ingredient.__init__(self, "GroundMeat", amount=float(amount),kcalPerCG=225,GperOne=100)
+        
 class Porree(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Porree", amount=float(amount),kcalPerCG=26,GperOne=50,PricePerPackage=2.5,GperPackage=1000)
@@ -203,7 +208,7 @@ class ChinaNoodles(Ingredient):
 
 class Beer(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Beer", amount=float(amount),kcalPerCG=49,GperOne=500)
+        Ingredient.__init__(self, "Beer", amount=float(amount),kcalPerCG=49,GperOne=500, PricePerPackage=2.5,GperPackage=500)
         
 class Quinoa(Ingredient):
     def __init__(self,amount):
@@ -236,9 +241,6 @@ class Potatoes(Ingredient):
 class RoastPork(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "RoastPork", amount=float(amount),kcalPerCG=115 ,GperOne=100)
-class Lemonade(Ingredient):
-    def __init__(self,amount):
-        Ingredient.__init__(self, "Lemonade", amount=float(amount),kcalPerCG=39 ,GperOne=500)
         
 class Lemonade(Ingredient):
     def __init__(self,amount):
@@ -247,22 +249,35 @@ class Lemonade(Ingredient):
 class Landjager(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Landjager", amount=float(amount),kcalPerCG=472 ,GperOne=50)
+        
 class ColdMeat(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "ColdMeat", amount=float(amount),kcalPerCG=270 ,GperOne=20)
         
+class Salami(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Salami", amount=float(amount),kcalPerCG=306 ,GperOne=18,PricePerPackage=0.99,GperPackage=200)
+
+class Mozarella(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Mozarella", amount=float(amount),kcalPerCG=245 ,GperOne=125, PricePerPackage=0.99, GperPackage=125)
+            
 class ChocoCrossaint(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "ChocoCrossaint", amount=float(amount),kcalPerCG=500 ,GperOne=65)
+
 class FruitSalad(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "FruitSalad", amount=float(amount),kcalPerCG=60 ,GperOne=100)
+
 class Bun(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Bun", amount=float(amount),kcalPerCG=248 ,GperOne=65)
+
 class SauerKraut(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "SauerKraut", amount=float(amount),kcalPerCG=15 ,GperOne=200)
+
 class BratWurst(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "BratWurst", amount=float(amount),kcalPerCG=239 ,GperOne=50)
@@ -270,25 +285,35 @@ class BratWurst(Ingredient):
 class Wirsing(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Wirsing", amount=float(amount),kcalPerCG=140 ,GperOne=100)
+
 class BratHering(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "BratHering", amount=float(amount),kcalPerCG=192 ,GperOne=325)       
+        Ingredient.__init__(self, "BratHering", amount=float(amount),kcalPerCG=192 ,GperOne=325)
+        
 class Fish(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Fish", amount=float(amount),kcalPerCG=140 ,GperOne=100)
+        
 class NussEcke(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "NussEcke", amount=float(amount),kcalPerCG=540 ,GperOne=50)
-        
+
+class Wiener(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Wiener", amount=float(amount),kcalPerCG=261 ,GperOne=60, PricePerPackage=1.00, GperPackage=60)
+            
 class GermKnoedel(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "GermKnoedel & VanilleSauce", amount=float(amount),kcalPerCG=300 ,GperOne=180)
+        
 class Romanesco(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Romanesco", amount=float(amount),kcalPerCG=300 ,GperOne=180)
+
 class Cauliflower(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Cauliflower", amount=float(amount),kcalPerCG=23 ,GperOne=100)
+
 class Apple(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Apple", amount=float(amount),kcalPerCG=54 ,GperOne=200)
@@ -308,7 +333,7 @@ class Leberknodel(Ingredient):
         
 class Cheese(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Cheese", amount=float(amount),kcalPerCG=370 ,GperOne=50)
+        Ingredient.__init__(self, "Cheese", amount=float(amount),kcalPerCG=370 ,GperOne=50,PricePerPackage=1.79,GperPackage=150)
         
 class Salad(Ingredient):
     def __init__(self,amount):
@@ -316,11 +341,11 @@ class Salad(Ingredient):
         
 
 IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuice,"Milk":Milk,"RockstarRed":RockstarRed,"RockstarGuava":RockstarGuava,"Beer":Beer,"Lemonade":Lemonade,"Cola":Cola},
-                  "StapleFood":{"Toast":Toast,"OatMeal":OatMeal,"SemmelKnoedel":SemmelKnoedel,"WildRice":WildRice,"WheatBread":WheatBread,"RedLenses":RedLenses,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
+                  "StapleFood":{"Toast":Toast,"OatMeal":OatMeal,"SemmelKnoedel":SemmelKnoedel,"WildRice":WildRice,"WheatBread":WheatBread,"RedLentils":RedLentils,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
-                  "Meat":{"Tuna":Tuna,"GroundMeat":GroundMeat,"BratHering":BratHering,"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
+                  "Meat":{"Wiener":Wiener,"Salami":Salami,"Tuna":Tuna,"GroundMeat":GroundMeat,"BratHering":BratHering,"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
                   "Vegetables/Fruit":{"Ananas":Ananas,"Kiwi":Kiwi,"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
-                  "Rest" :{"Cream":Cream,"StrawberryPie":StrawberryPie,"Datschi":Datschi,"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
+                  "Rest" :{"Mozarella":Mozarella,"Cream":Cream,"StrawberryPie":StrawberryPie,"Datschi":Datschi,"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,
                             "Sugar":Sugar,"Egg":Egg,"Prinzenrolle":Prinzenrolle,"Croissant":Croissant,"ChocoCrossaint":ChocoCrossaint}
                   }                    
