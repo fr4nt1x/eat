@@ -64,7 +64,8 @@ def get_price_per_day(startday):
     allDays = np.array(session.query(Day).order_by(Day.dateofconsum).all())[startday:]
     price = np.array([sum([z.price for z in x.meals if z.price!= None]) for x in allDays])    
     print(sum(price)/allDays.size)
-#get_days(50)
+
+get_days(50)
 
 get_price_per_day(235)
             
