@@ -63,6 +63,10 @@ class WildRice(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "WildRice", amount=float(amount),kcalPerCG=344,GperOne = 100)
 
+class Champignons(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Champignons", amount=float(amount),kcalPerCG=100,GperOne = 100, PricePerPackage=2.99,GperPackage=400)
+
 class WheatBread(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "WheatBread", amount=float(amount),kcalPerCG=241,GperOne = 40,PricePerPackage=2.5,GperPackage=500)
@@ -344,7 +348,7 @@ IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuic
                   "StapleFood":{"Toast":Toast,"OatMeal":OatMeal,"SemmelKnoedel":SemmelKnoedel,"WildRice":WildRice,"WheatBread":WheatBread,"RedLentils":RedLentils,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
                   "Meat":{"Wiener":Wiener,"Salami":Salami,"Tuna":Tuna,"GroundMeat":GroundMeat,"BratHering":BratHering,"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
-                  "Vegetables/Fruit":{"Ananas":Ananas,"Kiwi":Kiwi,"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
+                  "Vegetables/Fruit":{"Champignons":Champignons,"Ananas":Ananas,"Kiwi":Kiwi,"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
                   "Rest" :{"Mozarella":Mozarella,"Cream":Cream,"StrawberryPie":StrawberryPie,"Datschi":Datschi,"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,
                             "Sugar":Sugar,"Egg":Egg,"Prinzenrolle":Prinzenrolle,"Croissant":Croissant,"ChocoCrossaint":ChocoCrossaint}
