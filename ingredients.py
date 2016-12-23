@@ -38,6 +38,7 @@ class SemmelKnoedel(Ingredient):
 class OatMeal(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"OatMeal",amount=float(amount),kcalPerCG=361, GperOne = 100,PricePerPackage=1.89,GperPackage=500)
+        
 class Toast(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"Toast",amount=float(amount),kcalPerCG=255, GperOne = 37.5,PricePerPackage=1.19,GperPackage=500)
@@ -57,7 +58,6 @@ class RockstarGuava(Ingredient):
 class RockstarRed(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self,"RockstarRed",amount=float(amount),kcalPerCG=64, GperOne = 500,PricePerPackage=1.49,GperPackage=500)
-
         
 class WildRice(Ingredient):
     def __init__(self,amount):
@@ -76,7 +76,6 @@ class PeanutButterCrunchy(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "PeanutButterCrunchy", amount=float(amount),kcalPerCG=616,GperOne = 20)
 
-        
 class PhiladelphiaClassic(Ingredient):
     #one is a enoguh on a slice of bread
     def __init__(self,amount):
@@ -226,6 +225,11 @@ class Pasta(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Pasta", amount=float(amount),kcalPerCG=359 ,GperOne=100,PricePerPackage=1.59,GperPackage=500)
 
+class Pringles(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "Pringles", amount=float(amount), kcalPerCG=510 ,GperOne=100 , PricePerPackage=2.59 , GperPackage=190)
+
+
 class Gulasch(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Gulasch", amount=float(amount),kcalPerCG=150 ,GperOne=100)
@@ -349,7 +353,7 @@ IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuic
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
                   "Meat":{"Wiener":Wiener,"Salami":Salami,"Tuna":Tuna,"GroundMeat":GroundMeat,"BratHering":BratHering,"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
                   "Vegetables/Fruit":{"Champignons":Champignons,"Ananas":Ananas,"Kiwi":Kiwi,"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
-                  "Rest" :{"Mozarella":Mozarella,"Cream":Cream,"StrawberryPie":StrawberryPie,"Datschi":Datschi,"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
+                  "Rest" :{"Pringles":Pringles , "Mozarella":Mozarella,"Cream":Cream,"StrawberryPie":StrawberryPie,"Datschi":Datschi,"Cheese":Cheese,"Geramot":Geramot,"CreamJoghurt":CreamJoghurt,"NutCake":NutCake,"GermKnoedel & VanilleSauce":GermKnoedel,"NussEcke":NussEcke,"PeanutButterCrunchy":PeanutButterCrunchy,"PhiladelphiaClassic":PhiladelphiaClassic,"FolEpiFine":FolEpiFine,"Almonds":Almonds,
                   "LindChocolateChili":LindChocolateChili,"FlaxSeed":FlaxSeed,"QuarkLow":QuarkLow,"Raisins":Raisins,"Butter":Butter,
                             "Sugar":Sugar,"Egg":Egg,"Prinzenrolle":Prinzenrolle,"Croissant":Croissant,"ChocoCrossaint":ChocoCrossaint}
                   }                    
