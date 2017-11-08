@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 import os.path
 basedir = os.path.split(os.path.dirname(os.path.realpath(__file__)))[1]
-SQLALCHEMY_DATABASE_URI = 'sqlite:///db\eatit.db'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///db/eatit.db'
 
 # Create an engine that stores data in the local directory's
 # sqlalchemy_example.db file.

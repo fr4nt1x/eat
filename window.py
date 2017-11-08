@@ -10,7 +10,7 @@ class Scroll(tk.Frame):
         tk.Frame.__init__(self, root)
         self.Title = tk.Label(root, text=title,font=font)
 
-        self.canvas = tk.Canvas(root, borderwidth=0, height=400,background="#ffffff")
+        self.canvas = tk.Canvas(root, borderwidth=0, width=300,height=300,background="#ffffff")
         self.frame = tk.Frame(self.canvas,background="#ffffff")
         self.vsb = tk.Scrollbar(root, orient="vertical", command=self.canvas.yview)
         self.canvas.configure(yscrollcommand=self.vsb.set)
@@ -122,7 +122,7 @@ class App:
         self.apply.grid(row=self.maxRows+2,column=4,columnspan= 2,sticky="e")
         self.changeDay.grid(row=self.maxRows+2,column=0,columnspan=2,sticky="w")
         self.updateDayDataBtn.grid(row=self.maxRows+2,column=2,columnspan= 2,sticky="w")
-        self.changeWeightBtn.grid(row=self.maxRows+2,column=2,columnspan= 2,sticky="e")
+        self.changeWeightBtn.grid(row=self.maxRows+2,column=4,columnspan= 2,sticky="w")
         self.Quit.grid(row=self.maxRows+2,column=6,columnspan= 2,sticky="e")
 
         
@@ -200,8 +200,7 @@ class App:
          
 root = tk.Tk()
 root.title("Eatit")
-#root.attributes("-fullscreen", True)
+# root.attributes("-fullscreen", True)
 app = App(root)
-
 root.mainloop()
 root.destroy() # optional; see description below

@@ -6,12 +6,15 @@ from datetime import date,timedelta
 def getCurrentDay():
     lastDay = getLastDay()
     oneDay = timedelta(days=1)
-    
-    while (lastDay.dateofconsum != date.today()):
-        lastDay=Day(dateofconsum=lastDay.dateofconsum+oneDay)
+    if (lastDay!= None):
+        while (lastDay.dateofconsum != date.today()):
+            lastDay=Day(dateofconsum=lastDay.dateofconsum+oneDay)
+            session.add(lastDay)
+            print(lastDay.dateofconsum)
+    else:
+        lastDay=Day(dateofconsum=date.today())
         session.add(lastDay)
         print(lastDay.dateofconsum)
-        
     session.commit()
     return getLastDay()
 
