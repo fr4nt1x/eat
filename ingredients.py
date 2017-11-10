@@ -318,7 +318,7 @@ class GermKnoedel(Ingredient):
         
 class Romanesco(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "Romanesco", amount=float(amount),kcalPerCG=300 ,GperOne=180)
+        Ingredient.__init__(self, "Romanesco", amount=float(amount),kcalPerCG=25 ,GperOne=180)
 
 class Cauliflower(Ingredient):
     def __init__(self,amount):

@@ -93,7 +93,7 @@ class App:
         for key in sorted(IngredientList):
             for k in sorted(IngredientList[key]):
                 f= self.scaleFrames[i]
-                w= tk.Scale(f ,label=k+" "+str(IngredientList[key][k](1).GperOne)+" ("+str(IngredientList[key][k](1).kcalPerOne)+" , "+str(IngredientList[key][k](1).PricePerOne)+")", from_=0, to=5,resolution=0.1,length="100mm",orient=tk.HORIZONTAL,showvalue=1)
+                w= tk.Scale(f ,label=k+" "+str(IngredientList[key][k](1).GperOne)+" ("+str(IngredientList[key][k](1).kcalPerOne)+" , "+str(IngredientList[key][k](1).PricePerOne)+")", from_=0, to=5,resolution=0.1,length="80mm",orient=tk.HORIZONTAL,showvalue=1)
                 self.scales.append((key,k,w))
 
             i+=1
