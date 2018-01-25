@@ -48,14 +48,17 @@ def get_days(startday):
 
     weights = interpolate(weights)
     weightdeltaLb = (weights[-2]-weights[0])/LbinKg
-    MaintenanceKcal = (sum(kcal)-weightdeltaLb*kcalPerLb)/np.size(kcal)
+    #MaintenanceKcal = (sum(kcal)-weightdeltaLb*kcalPerLb)/np.size(kcal)
+    MaintenanceKcal = 2500
     print("Maintenance Kcal :",MaintenanceKcal)
     x = np.arange(1,np.size(weights)+1)
-    y1 = ((weights/max(weights)))
-    plt.plot(x,y1)
-    y2= kcal/max(kcal)
+    #y1 = ((weights/max(weights)))
+    #plt.plot(x,y1)
+    #y2= kcal/max(kcal)
+    y2= kcal
     plt.plot(x,y2)
-    y3=np.ones(np.size(weights))*(MaintenanceKcal/max(kcal))
+    #y3=np.ones(np.size(weights))*(MaintenanceKcal/max(kcal))
+    y3=np.ones(np.size(weights))*(MaintenanceKcal)
     plt.plot(x,y3)
    #print(np.trapz((y2-y3)*max(kcal),x))
     plt.show()
@@ -65,8 +68,8 @@ def get_price_per_day(startday):
     price = np.array([sum([z.price for z in x.meals if z.price!= None]) for x in allDays])    
     print(sum(price)/allDays.size)
 
-get_days(50)
+get_days(1)
 
-get_price_per_day(235)
+#get_price_per_day(235)
             
 

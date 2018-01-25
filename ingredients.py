@@ -71,7 +71,7 @@ class Champignons(Ingredient):
 
 class WheatBread(Ingredient):
     def __init__(self,amount):
-        Ingredient.__init__(self, "WheatBread", amount=float(amount),kcalPerCG=241,GperOne = 40,PricePerPackage=2.5,GperPackage=500)
+        Ingredient.__init__(self, "WheatBread", amount=float(amount),kcalPerCG=241,GperOne = 55,PricePerPackage=2.5,GperPackage=500)
 
 class PeanutButterCrunchy(Ingredient):
     #one is a enoguh on a slice of bread
@@ -109,7 +109,11 @@ class RedLentils(Ingredient):
 class Peas(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "Peas", amount=float(amount),kcalPerCG=68,GperOne=100)
-
+        
+class SoupPearls(Ingredient):
+    def __init__(self,amount):
+        Ingredient.__init__(self, "BakingPeas", amount=float(amount),kcalPerCG=514,GperOne=50)
+        
 class PapricaRed(Ingredient):
     def __init__(self,amount):
         Ingredient.__init__(self, "PapricaRed", amount=float(amount),kcalPerCG=35,GperOne=200,PricePerPackage=9.99,GperPackage=1000)
@@ -351,7 +355,7 @@ class Salad(Ingredient):
         
 
 IngredientList = {"Drinks":{"RockstarLime":RockstarLime,"CherryJuice":CherryJuice,"Milk":Milk,"RockstarRed":RockstarRed,"RockstarGuava":RockstarGuava,"Beer":Beer,"Lemonade":Lemonade,"Cola":Cola},
-                  "StapleFood":{"SweetCorn":SweetCorn,"Toast":Toast,"OatMeal":OatMeal,"SemmelKnoedel":SemmelKnoedel,"WildRice":WildRice,"WheatBread":WheatBread,"RedLentils":RedLentils,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
+                  "StapleFood":{"SoupPearls":SoupPearls,"SweetCorn":SweetCorn,"Toast":Toast,"OatMeal":OatMeal,"SemmelKnoedel":SemmelKnoedel,"WildRice":WildRice,"WheatBread":WheatBread,"RedLentils":RedLentils,"Peas":Peas,"MilkRice":MilkRice,"Pretzel":Pretzel,"PretzelRing":PretzelRing,
                                 "Quinoa":Quinoa,"ChinaNoodles":ChinaNoodles,"Pasta":Pasta,"Potatoes":Potatoes,"Bun":Bun,"SauerKraut":SauerKraut},
                   "Meat":{"Wiener":Wiener,"Salami":Salami,"Tuna":Tuna,"GroundMeat":GroundMeat,"BratHering":BratHering,"Leberknodel":Leberknodel,"Turkey":Turkey,"Gulasch":Gulasch,"RoastPork":RoastPork,"Landjager":Landjager,"ColdMeat":ColdMeat,"ChickenBreast":ChickenBreast,"BratWurst":BratWurst,"Fish":Fish},
                   "Vegetables/Fruit":{"Champignons":Champignons,"Ananas":Ananas,"Kiwi":Kiwi,"Pickle":Pickle,"Salad":Salad,"Tomato":Tomato,"Apple":Apple,"Romanesco":Romanesco,"Cauliflower":Cauliflower,"Wirsing":Wirsing,"PapricaRed":PapricaRed,"Onion":Onion,"Carot":Carot,"Banana":Banana,"Plums":Plums,"Porree":Porree,"FruitSalad":FruitSalad},
