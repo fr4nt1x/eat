@@ -22,10 +22,15 @@ def getLastDay():
     res = session.query(Day).order_by(desc(Day.dateofconsum)).first()
     return res
 
+def getLastDays(numberOfDays):
+    res = session.query(Day).order_by(desc(Day.dateofconsum)).limit(numberOfDays).all()
+    return res
  
 def addMeal(day,name,kcal,price=None):
     session.add(Meal(day= day, name=name, kcal = kcal,price=price))
     session.commit()
 
-
+def getNumberOfDays():
+    res = session.query(Day).count()
+    return res
 

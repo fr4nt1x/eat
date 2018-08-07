@@ -27,7 +27,51 @@ class Scroll(tk.Frame):
         '''Reset the scroll region to encompass the inner frame'''
         self.canvas.configure(scrollregion=self.canvas.bbox("all"))
 
-        
+
+class TextCanvas(tk.Frame):
+    def __init__(self, root, scrollrow, scrollcolumn, title="", font=("Helvetica", 12)):
+        tk.Frame.__init__(self, root)
+        self.numberOfDaysToDisplayKcal = 7
+        self.maxKcalPerDay = 2000
+        self.kcalMax = self.numberOfDaysToDisplayKcal*self.maxKcalPerDay
+
+
+        self.Title = tk.Label(root, text=title, font=font)
+
+        self.canvas = tk.Canvas(root, borderwidth=0, width=300, height=300, background="#ffffff")
+        #self.frame = tk.Frame(self.canvas, background="#ffffff")
+
+        self.canvas.grid(row=scrollrow+1, column=scrollcolumn,columnspan=2, sticky="w")
+
+        #self.canvas.create_window((0, 0), window=self.frame, anchor="nw",
+                                 # tags="self.frame")
+
+        self.Title.grid(row=scrollrow, column=scrollcolumn, columnspan=2, sticky="w")
+        #self.canvas.grid(row=scrollrow, column=scrollcolumn, columnspan=2, sticky="w")
+        #self.frame.bind("<Configure>", self.onFrameConfigure)
+
+        self.kcalAll = tk.StringVar()
+        self.kcalAll.set("Kcal Max: " + str(self.kcalMax))
+        self.kcalEaten = tk.StringVar()
+        self.kcalEaten.set("Kcal Eaten: ")
+        self.getEatenKcal()
+        self.kcalShowMax = tk.Label(self.canvas, textvariable=self.kcalAll,font=("Helvetica", 12))
+        self.kcalShowEaten = tk.Label(self.canvas, textvariable=self.kcalEaten,font=("Helvetica", 12))
+        self.kcalShowEaten.pack()
+        self.kcalShowMax.pack()
+
+    def getEatenKcal(self):
+        numberOfDaysTotal = getNumberOfDays()
+        daysToQuery = numberOfDaysTotal % self.numberOfDaysToDisplayKcal
+        lastDays = getLastDays(daysToQuery)
+        kcalDays = [sum([x.kcal for x in day.meals]) for day in lastDays]
+        self.kcalEaten.set("Kcal Eaten: "+ str(sum(kcalDays)))
+
+    # def onFrameConfigure(self, event):
+    #     '''Reset the scroll region to encompass the inner frame'''
+    #     self.canvas.configure(scrollregion=self.canvas.bbox("all"))
+
+
 class App:
 
     def __init__(self, master):
@@ -48,12 +92,17 @@ class App:
         self.maxColumns = 8
         for i in range(0,len(IngredientList)):
             
-            column = i%4
-
+            column = i % 4
             row=math.floor(i/4.)
+
             self.maxRows = 2*(row+1)
-            self.scaleFrames.append(Scroll(master,2*row+1,2*column,[x for x in sorted(IngredientList)][i]).frame)  
-        
+            self.scaleFrames.append(Scroll(master,2*row+1,2*column,[x for x in sorted(IngredientList)][i]).frame)
+
+        i = i+1
+        column = i % 4
+        row = math.floor(i / 4.)
+        self.CanvasInfo = TextCanvas(master, 2*row+1, 2*column, "test")
+
         self.updateDayDataBtn = tk.Button(
             master, text="Get Kcal & Weight", command=self.updateData,font=("Helvetica", self.FontSize)
             )
@@ -141,6 +190,7 @@ class App:
             addMeal(self.day,self.name.get(),kcal,price)
             self.name.delete(0, tk.END)
             self.getKcal()
+            self.CanvasInfo.getEatenKcal()
 
     def changeWeight(self):
         top = tk.Toplevel()
