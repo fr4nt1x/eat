@@ -32,7 +32,7 @@ class TextCanvas(tk.Frame):
     def __init__(self, root, scrollrow, scrollcolumn, title="", font=("Helvetica", 12)):
         tk.Frame.__init__(self, root)
         self.numberOfDaysToDisplayKcal = 7
-        self.maxKcalPerDay = 2000
+        self.maxKcalPerDay = 2300
         self.kcalMax = self.numberOfDaysToDisplayKcal*self.maxKcalPerDay
 
 
@@ -54,19 +54,29 @@ class TextCanvas(tk.Frame):
         self.kcalAll.set("Kcal Max: " + str(self.kcalMax))
         self.kcalEaten = tk.StringVar()
         self.kcalEaten.set("Kcal Eaten: ")
+        self.kcalDiff = tk.StringVar()
+        self.kcalDiff.set("Kcal Diff Daily: ")
+        self.daysRest = tk.StringVar()
+        self.daysRest.set("Days: ")
         self.getEatenKcal()
         self.kcalShowMax = tk.Label(self.canvas, textvariable=self.kcalAll,font=("Helvetica", 12))
+        self.kcalShowDiff = tk.Label(self.canvas, textvariable=self.kcalDiff,font=("Helvetica", 12))
         self.kcalShowEaten = tk.Label(self.canvas, textvariable=self.kcalEaten,font=("Helvetica", 12))
+        self.showDaysRest = tk.Label(self.canvas, textvariable=self.daysRest,font=("Helvetica", 12))
+
         self.kcalShowEaten.pack()
         self.kcalShowMax.pack()
+        self.kcalShowDiff.pack()
+        self.showDaysRest.pack()
 
     def getEatenKcal(self):
         numberOfDaysTotal = getNumberOfDays()
-        daysToQuery = numberOfDaysTotal % self.numberOfDaysToDisplayKcal
+        daysToQuery = numberOfDaysTotal % (self.numberOfDaysToDisplayKcal+1)
         lastDays = getLastDays(daysToQuery)
         kcalDays = [sum([x.kcal for x in day.meals]) for day in lastDays]
         self.kcalEaten.set("Kcal Eaten: "+ str(sum(kcalDays)))
-
+        self.kcalDiff.set("Kcal Diff Daily: " + str( ((self.kcalMax-sum(kcalDays))/self.numberOfDaysToDisplayKcal) ))
+        self.daysRest.set("Days: "+str(daysToQuery)+"/"+str(self.numberOfDaysToDisplayKcal))
     # def onFrameConfigure(self, event):
     #     '''Reset the scroll region to encompass the inner frame'''
     #     self.canvas.configure(scrollregion=self.canvas.bbox("all"))
